@@ -1,0 +1,20 @@
+.layout{
+    height: 300px;
+    width: 240px;
+    margin-bottom: 5%;
+    position: relative;
+    z-index:1;
+    background-color: black;
+}
+
+.layout:before{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top:0;
+    bottom:48%;
+    left:0;
+    right:0;
+    background-color: orangered;
+
+}
