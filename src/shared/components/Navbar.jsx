@@ -7,7 +7,7 @@ import search from "../../assets/search.png"
 const Navbar = () => {
   return (
     <>
-    <div className='relative w-full h-[75px]'>
+    <div className='relative w-full h-[75px] z-10'>
         <div className='flex fixed w-full shadow top-0 items-center pl-[4%] pr-[4%] h-[75px] bg-white'>
             <div className="mr-[5%]">
                 <img className='h-10 w-15' src={logo} alt="logo"/>
