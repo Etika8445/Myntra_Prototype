@@ -6,7 +6,12 @@ import Information from "../shared/api/Information"
 import HomeCard from "../components/HomeCard"
 import CelebInfo from "../shared/api/CelebInfo"
 import CelebrityCard from "../components/CelebrityCard"
+import { useNavigate } from "react-router-dom"
 const Homepage = () => {
+    const navigate= useNavigate();
+    const update=()=>{
+        navigate('/celebrity');
+    }
   return (
     <>
     <div className='pl-[4%] pr-[4%] mb-[3%] pt-[2.5%]'>
@@ -32,10 +37,10 @@ const Homepage = () => {
         })}
     </div>
     <div className="flex m-[4%] justify-between">
-        <p className="font-bold text-5xl pb-[2%]">Look Who&#39;s Wearing What</p>
-        <button className="bg-pink-600 text-white rounded-md mr-[1%] w-[130px] h-[45px] text-xl">EXPLORE</button>
+        <p className="font-bold text-5xl pb-[2%] relative">Look Who&#39;s Wearing What<sup className='text-[40%] text-pink-600 font-bold mt-4 absolute'>NEW</sup></p>
+        <button className="bg-pink-600 text-white rounded-md mr-[1%] w-[130px] h-[45px] text-xl" onClick={update}>EXPLORE</button>
     </div>
-    <div className='flex justify-center items-center flex-wrap mt-[3%] mb-[4%] pl-[3%] pr-[2%]'>
+    <div className='flex justify-center items-center flex-wrap mt-[3%] pl-[3%] pr-[2%]'>
         {CelebInfo.map((info,key)=>{
             return <CelebrityCard key={key} {...info}/>
         })}

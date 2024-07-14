@@ -1,6 +1,9 @@
+import footer from "../../assets/footer.png"
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className="w-full">
+      <img src={footer} alt="footer"/>
+    </div>
   )
 }
 

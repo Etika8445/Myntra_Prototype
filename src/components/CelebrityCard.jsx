@@ -1,16 +1,28 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 const CelebrityCard = (props) => {
+  const navigate= useNavigate();
+  const update=(value)=>{
+    if(value==='Stylum'){
+      navigate("/black-kurti");
+    }
+  }
+  const show=(value)=>{
+    if(value==='Stylum'){
+      navigate("/kurti-stylum");
+    }
+  }
   return (
     <>
-        <div className="w-[250px] h-[550px] mb-[10%] mr-[2%]"  key={props.id}>
+        <div className="w-[250px] h-[550px] mb-[3%] mr-[2%] cursor-pointer"  key={props.id}>
           <div className="h-[300px] w-full  mb-4">
                 <img className="h-full w-full object-fit rounded-lg" src={props.celebimage} alt="clothing"/>
           </div>
           <div className="flex justify-between items-center">
-            <a href="https://www.myntra.com/kurtas?f=Color%3ABlack_36454f%3A%3AGender%3Amen%20women%2Cwomen">
-            <div className="font-bold border border-width-0 p-2 rounded-2xl text-pink-600 text-[80%]">SIMILAR PRODUCTS {">>"}</div>
+            {/* <a href="https://www.myntra.com/kurtas?f=Color%3ABlack_36454f%3A%3AGender%3Amen%20women%2Cwomen"> */}
+            <div className="font-bold border border-width-0 p-2 rounded-2xl text-pink-600 text-[80%]" onClick={()=>{update(props.about2)}}>SIMILAR PRODUCTS {">>"}</div>
             {/* <button className="bg-pink-600 text-white rounded-md p-1 text-xs">EXPLORE</button> */}
-            </a>
+            {/* </a> */}
           </div>
           <div className="h-[200px] w-full flex justify-between mt-3">
               <a href={props.link1}>
@@ -20,13 +32,13 @@ const CelebrityCard = (props) => {
                     <p className="font-bold">Under ₹ {props.price1}</p>
                 </div>
               </a>
-              <a href={props.link2}>
-                <div>
+              {/* <a href={props.link2}> */}
+                <div onClick={()=>{show(props.about2)}}>
                     <img className='h-[120px] w-[120px] bg-black rounded-md mb-3' src={props.relimage2} alt='similar'/>
                     <p className="text-[21px] font-bold">{props.about2}</p>
                     <p className="font-bold">Under ₹ {props.price2}</p>
                 </div>
-              </a>
+              {/* </a> */}
           </div>
         </div>
     </>
